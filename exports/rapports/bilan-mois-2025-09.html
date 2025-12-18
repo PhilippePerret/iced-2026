@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapport mois pour l'URSSAF</title>
+  <style type="text/css">
+body {
+  font-size:13pt;
+  margin:1.5cm;
+  width:calc(29.7cm - 3cm);
+  height:calc(21cm - 3cm);
+}
+.bold{
+  font-weight:bold;
+}
+.bigger {
+  font-size:1.15em;
+}
+.smaller {
+  font-size:.85em;
+}
+.right {
+  text-align:right;
+}
+.italic {
+  font-style:italic;
+}
+.center {
+  text-align:center;
+}
+
+div.keep-together {
+  page-break-inside:avoid;
+}
+div#lieu_date {
+  font-style:italic;
+  text-align:right;
+  width:800px;
+}
+
+footer {
+  margin-top:4em;
+  text-align:center;
+  font-size:.8em;
+  border-top:1px solid #CCC;
+  padding-top:8px;
+}
+
+section#objet, section.droits, section#totaux, table.ventes {
+  width:840px;
+  border-width:1px 1px 0 1px;
+  border-style:solid;
+  border-color:#AAA;
+  display:block;
+  margin-top:2em;
+  margin-bottom:2em;
+}
+
+section#explications {
+  margin-top:2em;
+  font-size:11pt;
+  font-style:italic;
+}
+
+div.data-line.left span.value {
+  text-align:left;
+}
+
+div.data-line {
+  display:inline-block;
+  width:840px;
+  padding:0;
+  border-width:0 0 1px 0;
+  border-style:solid;
+  border-color:#AAA;
+}
+
+div.data-line span.label {
+  width:620px;
+}
+
+div.data-line span.value {
+  width:140px;
+}
+
+div.data-line.long-value span.label {
+  width:140px;
+}
+
+div.data-line.long-value span.value {
+  width:620px;
+}
+div.data-line.vert {
+  background-color:#00df00;
+}
+div.data-line.bold {
+  border-width:1px 0;
+  border-color:#555;
+}
+
+div.data-line span {
+  vertical-align:top;
+  padding:2px .5em;
+}
+div.data-line span.label,
+div.data-line span.value {
+  display:inline-block;
+}
+div.data-line span.value {
+  text-align:right;
+}
+div.data-line.montant span.value {
+  font-family:Georgia;
+}
+div.data-line.indent1 span.label {
+  padding-left:1cm;
+}
+div.data-line.indent2 span.label {
+  padding-left:2cm;
+}
+div.data-line.indent3 span.label {
+  padding-left:4cm;
+  width:16cm;
+}
+table.ventes {
+  width:1420px;
+}
+table.ventes tr.header td {
+  font-weight:bold;
+  font-variant:all-small-caps;
+  font-size:1.2em !important;
+}
+table.ventes tr td {
+  border-bottom:1px solid #CCC;
+}
+table.ventes tr td:nth-child(1) {
+  width:40px;
+}
+table.ventes tr td:nth-child(2) {
+  width:100px;
+  font-size:.85em;
+}
+table.ventes tr td:nth-child(3) {
+  width:600px;
+}
+table.ventes tr td:nth-child(4) {
+  width:240px;
+  font-size:.9em;
+}
+table.ventes tr td:nth-child(5) {
+  width:200px;
+}
+table.ventes tr td:nth-child(6) {
+  width:80px;
+  font-family:Georgia;
+  text-align:center;
+}
+table.ventes tr td:nth-child(7) {
+  width:80px;
+  text-align:center;
+}
+table.ventes tr td:nth-child(8),
+table.ventes tr td.sous-total,
+table.ventes tr td.total {
+  width:100px !important;
+  text-align:right !important;
+  font-size:1em !important;
+}
+table.ventes tr td.sous-total,
+table.ventes tr td.total {
+  font-weight:bold !important;
+}
+table.ventes tr.total td {
+  font-size:1.4em !important;
+}
+</style>
+</head>
+<body>
+<div><img src="logo-couleur-petit.jpg" alt="Logo Icare éditions" /></div>
+<section id="objet">
+  <div class="data-line left long-value">
+    <span class="label bold">OBJET</span><span class="value">BILAN COMPTABLE</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">ÉMIS PAR</span><span class="value">ICARE ÉDITIONS — 2 rue de Goritz 40000 Mont-de-Marsan</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">SIRET</span><span class="value">50868036000023</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">PÉRIODE</span><span class="value">Mois de septembre 2025</span>
+  </div>
+</section>
+
+<div id='lieu_date'>Fait à Mont-de-Marsan, le 13 octobre 2025</div>
+
+<!-- 
+  TABLE DES LIVRES
+ -->
+<table class="ventes">
+  <tr class="header"><td colspan="6">VENTE DE LIVRES</td></tr>
+  <!-- ENTÊTE POUR LA PARTIE DES LIVRES -->
+  <tr><td>ID</td><td>Date</td><td>Article</td><td>Tarif/unité</td><td>Quantité</td><td>Recette</td></tr>
+  
+    
+    <tr>
+      <td>#70</td>
+      <td>09/2025</td>
+      <td>Correspondance Parents</td>
+      <td>1.58 €</td>
+      <td>1</td>
+      <td>1.58 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#61</td>
+      <td>09/2025</td>
+      <td>GAT en anglais version Icare</td>
+      <td>3.72 €</td>
+      <td>6</td>
+      <td>22.32 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#62</td>
+      <td>09/2025</td>
+      <td>Analyse Moonlight Sonata (version Icare)</td>
+      <td>5.03 €</td>
+      <td>1</td>
+      <td>5.03 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#63</td>
+      <td>09/2025</td>
+      <td>Comprendre & Apprendre le Clair de Lune de BEETHOVEN (Icare)</td>
+      <td>6.36 €</td>
+      <td>1</td>
+      <td>6.36 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#63</td>
+      <td>09/2025</td>
+      <td>Comprendre & Apprendre le Clair de Lune de BEETHOVEN (Icare)</td>
+      <td>6.92 €</td>
+      <td>1</td>
+      <td>6.92 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#55</td>
+      <td>09/2025</td>
+      <td>SRPS des éditions Icare</td>
+      <td>4.48 €</td>
+      <td>4</td>
+      <td>17.92 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#60</td>
+      <td>09/2025</td>
+      <td>GAT Icare</td>
+      <td>4.29 €</td>
+      <td>3</td>
+      <td>12.87 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#64</td>
+      <td>09/2025</td>
+      <td>Comprendre & apprendre le Petit Prélude de BACH (v. Icare)</td>
+      <td>5.99 €</td>
+      <td>2</td>
+      <td>11.98 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#25</td>
+      <td>09/2025</td>
+      <td>Gammes et accords dans tous les tons</td>
+      <td>5.83 €</td>
+      <td>1</td>
+      <td>5.83 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#25</td>
+      <td>09/2025</td>
+      <td>Gammes et accords dans tous les tons</td>
+      <td>4.29 €</td>
+      <td>10</td>
+      <td>42.90 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#14</td>
+      <td>09/2025</td>
+      <td>Savoir rédiger et présenter son scénario</td>
+      <td>5.89 €</td>
+      <td>1</td>
+      <td>5.89 €</td>
+    </tr>    
+  
+    
+    <tr>
+      <td>#45</td>
+      <td>09/2025</td>
+      <td>Scales and Chords in All the Keys</td>
+      <td>4.29 €</td>
+      <td>2</td>
+      <td>8.58 €</td>
+    </tr>    
+  
+  <tr>
+    <td colspan="5" class="bold right">SOUS-TOTAL</td>
+    <td class="sous-total">148.18 €</td>    
+  </tr>
+
+<!-- 
+  FORMATIONS & COURS
+ -->
+  <tr><td colspan="6">   </td></tr>
+  <tr class="header"><td colspan="6" class="header">FORMATIONS & COURS</td></tr>
+  <tr><td>ID</td><td>Date</td><td>Article</td><td>Tarif/unité</td><td>Quantité</td><td>Recette</td></tr>
+  
+    
+    <tr>
+      <td>#36</td>
+      <td>09/2025</td>
+      <td>Cours particulier (1H)</td>
+      <td>40.00 €</td>
+      <td>4</td>
+      <td>160.00 €</td>
+    </tr>
+  
+  <tr>
+    <td colspan="5" class="bold right">SOUS-TOTAL</td>
+    <td class="sous-total">160.00 €</td>    
+  </tr>
+  <!-- TOTAL TOTAL -->
+  <tr><td colspan="6">   </td></tr>
+  <tr><td colspan="6">   </td></tr>
+  <tr class="total">
+    <td colspan="6" class="total">TOTAL   308.18 €</td></tr>  
+</table>
+
+<footer>ICARE ÉDITIONS — 2 rue de Goritz 40000 Mont-de-Marsan — SIRET : 50868036000023</footer>
+
+</body>
+</html>

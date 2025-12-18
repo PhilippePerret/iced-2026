@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 3268 2271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-17445.5,-37473.4)">
+        <g transform="matrix(1.45141,0,0,1,-27492.6,-0.409681)">
+            <g transform="matrix(0.678814,-0.437432,0.514778,1.68284,23511.6,46054.2)">
+                <g transform="matrix(1,0,0,1,-12.6451,-2245.98)">
+                    <path d="M11953.2,997.87L14783.5,997.87" style="fill:none;stroke:black;stroke-width:24.86px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-12.6451,-2098.14)">
+                    <path d="M11953.2,997.87L14783.5,997.87" style="fill:none;stroke:black;stroke-width:24.86px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-12.6451,-1950.3)">
+                    <path d="M11953.2,997.87L14783.5,997.87" style="fill:none;stroke:black;stroke-width:24.86px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-12.6451,-1802.46)">
+                    <path d="M11953.2,997.87L14783.5,997.87" style="fill:none;stroke:black;stroke-width:24.86px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-12.6451,-1654.62)">
+                    <path d="M11953.2,997.87L14783.5,997.87" style="fill:none;stroke:black;stroke-width:24.86px;"/>
+                </g>
+            </g>
+            <g transform="matrix(0.756368,0,0,0.756368,4251.67,7654.69)">
+                <g transform="matrix(1.29863,0,0,1.29863,-18109.7,-9722.82)">
+                    <g transform="matrix(0.687609,0,0,0.991515,38243.8,37089.6)">
+                        <rect x="5866.28" y="2010.43" width="863.927" height="678.99" style="fill:rgb(255,218,0);stroke:black;stroke-width:3.2px;stroke-linecap:round;"/>
+                    </g>
+                    <g transform="matrix(0.274123,0,0,0.375944,41429,38584.8)">
+                        <text x="3890.15px" y="2877.76px" style="font-family:'GurmukhiMN', 'Gurmukhi MN', serif;font-size:2030.37px;fill:white;">I</text>
+                    </g>
+                </g>
+                <g transform="matrix(1.29863,0,0,1.29863,-18096.6,-9746.42)">
+                    <g transform="matrix(0.687609,0,0,0.991515,38233.8,36352.5)">
+                        <rect x="5866.28" y="2010.43" width="863.927" height="678.99" style="fill:rgb(237,47,80);stroke:black;stroke-width:3.2px;stroke-linecap:round;"/>
+                    </g>
+                    <g transform="matrix(0.253424,0,0,0.367824,41411.9,37871.2)">
+                        <text x="3890.15px" y="2877.76px" style="font-family:'GurmukhiMN', 'Gurmukhi MN', serif;font-size:2030.37px;fill:white;">A</text>
+                    </g>
+                </g>
+                <g transform="matrix(1.29863,0,0,1.29863,-18112.8,-9714.22)">
+                    <g transform="matrix(0.687609,0,0,0.991515,37595.6,37083)">
+                        <rect x="5866.28" y="2010.43" width="863.927" height="678.99" style="fill:rgb(0,154,36);stroke:black;stroke-width:3.2px;stroke-linecap:round;"/>
+                    </g>
+                    <g transform="matrix(0.225095,0,0,0.326707,40844.8,38687.5)">
+                        <text x="3890.15px" y="2877.76px" style="font-family:'GurmukhiMN', 'Gurmukhi MN', serif;font-size:2030.37px;fill:white;">M</text>
+                    </g>
+                </g>
+                <g transform="matrix(1.29863,0,0,1.29863,-18106.2,-9739.11)">
+                    <g transform="matrix(0.687609,0,0,0.991515,37590.5,36346.8)">
+                        <rect x="5866.28" y="2010.43" width="863.927" height="678.99" style="fill:rgb(0,96,234);stroke:black;stroke-width:3.2px;stroke-linecap:round;"/>
+                    </g>
+                    <g transform="matrix(0.251328,0,0,0.364782,40745.7,37866.7)">
+                        <text x="3890.15px" y="2877.76px" style="font-family:'GurmukhiMN', 'Gurmukhi MN', serif;font-size:2030.37px;fill:white;">C</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

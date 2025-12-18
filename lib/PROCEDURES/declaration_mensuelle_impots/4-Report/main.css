@@ -1,0 +1,170 @@
+
+body {
+  font-size:13pt;
+  margin:1.5cm;
+  width:calc(29.7cm - 3cm);
+  height:calc(21cm - 3cm);
+}
+.bold{
+  font-weight:bold;
+}
+.bigger {
+  font-size:1.15em;
+}
+.smaller {
+  font-size:.85em;
+}
+.right {
+  text-align:right;
+}
+.italic {
+  font-style:italic;
+}
+.center {
+  text-align:center;
+}
+
+div.keep-together {
+  page-break-inside:avoid;
+}
+div#lieu_date {
+  font-style:italic;
+  text-align:right;
+  width:800px;
+}
+
+footer {
+  margin-top:4em;
+  text-align:center;
+  font-size:.8em;
+  border-top:1px solid #CCC;
+  padding-top:8px;
+}
+
+section#objet, section.droits, section#totaux, table.ventes {
+  width:840px;
+  border-width:1px 1px 0 1px;
+  border-style:solid;
+  border-color:#AAA;
+  display:block;
+  margin-top:2em;
+  margin-bottom:2em;
+}
+
+section#explications {
+  margin-top:2em;
+  font-size:11pt;
+  font-style:italic;
+}
+
+div.data-line.left span.value {
+  text-align:left;
+}
+
+div.data-line {
+  display:inline-block;
+  width:840px;
+  padding:0;
+  border-width:0 0 1px 0;
+  border-style:solid;
+  border-color:#AAA;
+}
+
+div.data-line span.label {
+  width:620px;
+}
+
+div.data-line span.value {
+  width:140px;
+}
+
+div.data-line.long-value span.label {
+  width:140px;
+}
+
+div.data-line.long-value span.value {
+  width:620px;
+}
+div.data-line.vert {
+  background-color:#00df00;
+}
+div.data-line.bold {
+  border-width:1px 0;
+  border-color:#555;
+}
+
+div.data-line span {
+  vertical-align:top;
+  padding:2px .5em;
+}
+div.data-line span.label,
+div.data-line span.value {
+  display:inline-block;
+}
+div.data-line span.value {
+  text-align:right;
+}
+div.data-line.montant span.value {
+  font-family:Georgia;
+}
+div.data-line.indent1 span.label {
+  padding-left:1cm;
+}
+div.data-line.indent2 span.label {
+  padding-left:2cm;
+}
+div.data-line.indent3 span.label {
+  padding-left:4cm;
+  width:16cm;
+}
+table.ventes {
+  width:1420px;
+}
+table.ventes tr.header td {
+  font-weight:bold;
+  font-variant:all-small-caps;
+  font-size:1.2em !important;
+}
+table.ventes tr td {
+  border-bottom:1px solid #CCC;
+}
+table.ventes tr td:nth-child(1) {
+  width:40px;
+}
+/* table.ventes tr td:nth-child(2) {
+  width:100px;
+  font-size:.85em;
+} */
+table.ventes tr td:nth-child(2) {
+  width:600px;
+}
+table.ventes tr td:nth-child(3) {
+  width:240px;
+  font-size:.9em;
+}
+table.ventes tr td:nth-child(4) {
+  width:200px;
+}
+table.ventes tr td:nth-child(5) {
+  width:80px;
+  font-family:Georgia;
+  text-align:center;
+}
+table.ventes tr td:nth-child(6) {
+  width:80px;
+  text-align:center;
+}
+table.ventes tr td:nth-child(7),
+table.ventes tr td.sous-total,
+table.ventes tr td.total {
+  width:100px !important;
+  text-align:right !important;
+  font-size:1em !important;
+}
+table.ventes tr td.sous-total,
+table.ventes tr td.total {
+  font-weight:bold !important;
+}
+table.ventes tr.total td {
+  font-size:1.4em !important;
+}

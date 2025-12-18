@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+ICED_OPE = 'impots'
+require_relative '../iced-26'
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Rapport mois pour l'URSSAF
+  </title>
+  <!-- STYLES_CSS -->
+</head>
+
+<body>
+<div><img src="logo-couleur-petit.jpg" alt="Logo Icare éditions" /></div>
+<section id="objet">
+  <div class="data-line left long-value">
+    <span class="label bold">OBJET</span><span class="value">BILAN COMPTABLE</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">ÉMIS PAR</span><span class="value">ICARE_DESIGNATION</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">SIRET</span><span class="value">ICARE_SIRET</span>
+  </div>
+  <div class="data-line left long-value">
+    <span class="label bold">PÉRIODE</span><span class="value">PERIODE_COUVERTURE</span>
+  </div>
+</section>
+
+<div id="lieu_date">Fait à LIEU_EMISSION, DATE_EMISSION</div>
+
+<table class="ventes">
+  <tr class="header"><td colspan="NOMBRE_CELLULES">VENTE DE LIVRES</td></tr>
+  <tr><td>ID</td><td>Article</td><td>Tarif/unité</td><td>Quantité</td><td>Recette</td></tr>
+  VENTES_LIVRES
+  <tr>
+    <td colspan="NOMBRE_CELLULES_MOINS_UN" class="bold right">SOUS-TOTAL</td>
+    <td class="sous-total">TOTAL_LIVRES</td>    
+  </tr>
+
+
+  <tr><td colspan="NOMBRE_CELLULES">&nbsp;</td></tr>
+  <tr class="header">
+    <td colspan="NOMBRE_CELLULES" class="header">FORMATIONS & COURS</td>
+  </tr>
+  <tr>
+    <td>ID</td><td>Article</td><td>Tarif/unité</td><td>Quantité</td><td>Recette</td>
+  </tr>
+  VENTES_SERVICES
+  <tr>
+    <td colspan="NOMBRE_CELLULES_MOINS_UN" class="bold right">SOUS-TOTAL</td>
+    <td class="sous-total">TOTAL_SERVICES</td>    
+  </tr>
+  <tr><td colspan="NOMBRE_CELLULES">&nbsp;</td></tr>
+  <tr><td colspan="NOMBRE_CELLULES">&nbsp;</td></tr>
+  <tr class="total">
+    <td colspan="NOMBRE_CELLULES" class="total">TOTAL TOTAL_TOTAL</td>
+  </tr>  
+</table>
+
+<footer>ICARE_DESIGNATION — SIRET ICARE_SIRET</footer>
+
+</body>
+</html>

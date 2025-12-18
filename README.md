@@ -1,8 +1,10 @@
 # Iced 2026
 
-Comment j'en ai marre de toujours planter la déclaration mensuelle à l'URSSAF, je fais une procédure sans erreur séparée et en Ruby version 3.4.7
+Nouveau code pour la commande Iced qui permet de gérer les éditions.
 
-Jouer
+Pour le moment, c'est surtout pour faire enfin une commande qui fonctionne pour la déclaration mensuelle auprès de l'URSSAF.
+
+Pour lancer en local, jouer. Sinon, jouer le script `bin/iced-2026-impots`.
 
 ~~~ruby
 > iced-impots

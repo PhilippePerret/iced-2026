@@ -63,6 +63,26 @@ module Tarifs
       [prec && (prec + 1), fin]
     end
 
+    # @return [Hash] Les données +data+ du produit avec le nouveau
+    # tarif, applicable à partir de +date+. L'ancien tarif (courant)
+    # est consigné dans :anciens_tarifs jusqu'à la veille de +date+.
+    # Si +redevance+ est nil, la redevance courante est conservée.
+    #
+    # @raise ArgumentError si +date+ n'est pas postérieure au début du
+    # tarif courant.
+    def changer(data, date:, prix_ht:, prix_ttc:, redevance: nil)
+      jour  = to_date(date)
+      debut = debut_tarif_courant(data)
+      if debut && jour <= debut
+        raise ArgumentError, "Le nouveau tarif doit commencer après le #{debut.strftime('%d/%m/%Y')} (début du tarif courant)."
+      end
+      ancien = {jusqu_au: (jour - 1).strftime('%d/%m/%Y')}
+      PROPS.each { |p| ancien[p] = data[p] unless data[p].nil? }
+      nouveau = {prix_ht: prix_ht, prix_ttc: prix_ttc}
+      nouveau[:redevance] = redevance unless redevance.nil?
+      data.merge(nouveau).merge(anciens_tarifs: anciens_tarifs(data) + [ancien])
+    end
+
     def anciens_tarifs(data)
       (data[:anciens_tarifs] || []).sort_by { |t| to_date(t[:jusqu_au]) }
     end

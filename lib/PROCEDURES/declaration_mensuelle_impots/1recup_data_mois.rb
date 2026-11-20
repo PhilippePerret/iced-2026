@@ -12,8 +12,6 @@ class << self
   # 
   def open_report_in_number_and_convert
 
-    return puts("je ne le fais pas, pour l'essai")
-
     # 
     # Trouver le dossier KDP dans le dossier des téléchargements
     # 

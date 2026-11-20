@@ -21,6 +21,8 @@ class KDPVente
   def produit_id  = data[:edic_produit_id]
   def nombre      = data[:nombre]
   def redevance   = data[:redevance]
+  # Prix unitaire HT consigné dans la vente (services)
+  def prix_ht     = data[:prix_ht]
   # def devise; @devise ||= data[:devise] end
   def cout_u; @cout_u ||= data[:cout] end
 

@@ -74,7 +74,7 @@ end
       }) 
     end
     produit.quantite_totale += vente.nombre
-    res.services[produit.id][:ventes_distinctes] << {quantite: vente.nombre, prix_vente: produit.prix_ht}
+    res.services[produit.id][:ventes_distinctes] << {quantite: vente.nombre, prix_vente: vente.prix_ht || produit.tarif_at(vente.date).prix_ht}
     return res
   end
 

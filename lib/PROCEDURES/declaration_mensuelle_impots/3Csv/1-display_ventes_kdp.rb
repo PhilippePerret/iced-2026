@@ -44,11 +44,9 @@ class << self
           errors_returned.data << livre
           puts "  #{livre.asin.ljust(15)} #{livre.quantite.to_s.ljust(4)} #{€(livre.benefice).rjust(8)}   #{livre.titre_par_csv}".rouge
         end
-        livre.ventes.group_by do |vente|
-          vente.devise
-        end.each do |devise, ventes|
-          puts "#{' ' * 32}=> Vente : #{ventes.sum { |vente| vente.quantite }} x #{ventes.first.benefice_u } #{devise}"
-        end
+        data_ventes_for_livre(livre).each do |dvente|
+          puts "#{' ' * 32}=> Vente : #{dvente[:nombre]} x #{dvente[:redevance]} € (#{dvente[:devise]}, #{dvente[:taux_redevance]} %)"
+        end if livre.known?
       end
     end
 

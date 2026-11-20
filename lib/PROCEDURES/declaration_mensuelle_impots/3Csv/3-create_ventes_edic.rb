@@ -10,47 +10,25 @@ class << self
   # 
   def create_ventes_edic
     liste_data_ventes = []
+    ecarts = []
     livres_from_csv.each do |livre|
-      livre.ventes.group_by do |vente|
-        vente.devise
-      end.each do |devise, ventes|
-        # ventes = Array de Edic::Command::KDPLine
-        # puts "#{' ' * 32}=> Vente : #{ventes.sum { |vente| vente.quantite }} x #{ventes.first.benefice_u } #{devise}"
-        quantite = ventes.sum { |vente| vente.quantite }
-        taux_redev = ventes.first.droits
-        if taux_redev != livre.as_prod.redevance
-          msg = "
-          Bizarrement, le taux de redevance (% droits) dans le 
-          rapport (#{taux_redev} %) ne correspond pas aux droits
-          obtenus par livre.as_prod.redevance (#{livre.as_prod.redevance})
-          livre.as_prod = #{livre.as_prod.inspect}
-          livre.as_prod.data = #{livre.as_prod.inspect}
-          ".rouge
-          puts msg
-          exit
-        end
-        data_vente = {
-          edic_client_id:   AMAZON_CLIENT_ID,
-          edic_produit_id:  livre.produit_id,
-          nombre:           quantite,
-          taux_redevance:   taux_redev,
-          redevance:        ventes.first.benefice_u,
-          cout:             ventes.first.cout_u,
-          devise:           devise,
-          date:             "15/#{mois}/#{annee}",
-          taux_change:      nil, # cf. ci-dessous
-          id:               nil, # cf. plus bas
-        }
+      ecarts += ecarts_taux_redevance(livre)
+      liste_data_ventes += data_ventes_for_livre(livre)
+    end
 
-        # Quand remboursement par exemple
-        rede = data_vente[:redevance]
-        next if (rede.is_a?(Float) && rede.nan?) || rede.to_i == 0
-
-        if devise != 'EUR'
-          data_vente.merge!(taux_change: TAUX_CHANGES[devise])
-        end
-        liste_data_ventes << data_vente
+    # Taux de redevance du rapport différent de celui de la fiche
+    # produit (à la date de la vente)
+    unless ecarts.empty?
+      puts "\nTaux de redevance du rapport KDP différents de ceux des fiches produits :".rouge
+      ecarts.each do |ecart|
+        puts "  ##{ecart[:produit_id]} #{ecart[:date].strftime('%d/%m/%Y')} : rapport #{ecart[:rapport]} % / fiche #{ecart[:fiche].inspect} %".rouge
       end
+      puts <<~TXT.orange
+        (Les montants enregistrés sont ceux du rapport KDP. Si un tarif a
+        changé, l'ancien doit être consigné dans :anciens_tarifs de la
+        fiche produit.)
+      TXT
+      Q.yes?("Poursuivre malgré tout ?".jaune) || return
     end
 
     # Affichage des données qui vont être enregistrées (pour validation)
@@ -89,6 +67,45 @@ class << self
     puts "👌 Ventes enregistrées (#{liste_data_ventes.count})".vert
 
     return true
+  end
+
+  # @return [Array<Hash>] Les données des ventes Edic à créer pour le
+  # livre +livre+ (LivreCheck). Les lignes du CSV sont regroupées par
+  # devise, taux de redevance et redevance unitaire, pour qu'un
+  # changement de prix ou de taux dans le mois produise des ventes
+  # distinctes.
+  def data_ventes_for_livre(livre)
+    livre.ventes.group_by { |line| line.cle_vente }.map do |(devise, droits, _red_u), lines|
+      quantite = lines.sum { |line| line.quantite }
+      next if quantite == 0 # p.e. vente remboursée dans le mois
+      benefice_u = (lines.sum { |line| line.benefice } / quantite).round(2)
+      next if benefice_u.nan? || benefice_u.zero?
+      data_vente = {
+        edic_client_id:   AMAZON_CLIENT_ID,
+        edic_produit_id:  livre.produit_id,
+        nombre:           quantite,
+        taux_redevance:   droits,
+        redevance:        benefice_u,
+        cout:             lines.first.cout_u,
+        devise:           devise,
+        date:             "15/#{mois}/#{annee}",
+        taux_change:      nil,
+        id:               nil, # cf. plus bas
+      }
+      data_vente.merge!(taux_change: TAUX_CHANGES[devise]) if devise != 'EUR' # (toujours vrai, devise est un Symbol : comportement d'origine conservé)
+      data_vente
+    end.compact
+  end
+
+  # @return [Array<Hash>] Liste des lignes du CSV du livre +livre+ dont
+  # le taux de redevance diffère de celui de la fiche produit à la date
+  # de la vente.
+  def ecarts_taux_redevance(livre)
+    livre.ventes.map do |line|
+      fiche = Tarifs.at(livre.as_prod.to_h, line.date).redevance
+      next if fiche.to_i == line.droits
+      {produit_id: livre.produit_id, date: line.date, rapport: line.droits, fiche: fiche}
+    end.compact.uniq { |e| [e[:date], e[:rapport]] }
   end
 
   def get_next_vente_id

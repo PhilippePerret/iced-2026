@@ -12,6 +12,8 @@ class KDPLine
     @row = dline
   end
   def asin; @asin ||= row[3] end
+  # Date de la vente (colonne "Date des redevances" au format AAAA-MM-JJ)
+  def date; @date ||= Date.parse(row[0]) end
   def quantite; @quantite ||= row[9].to_i end
   def cout_u
     @cout_u ||= begin
@@ -52,6 +54,11 @@ class KDPLine
   end
   def droits # p.e. 60 pour '60%'
     @droits ||= row[5].sub(/%/,'').strip.to_i
+  end
+  # Clé de regroupement des lignes en une même vente Edic : même
+  # devise, même taux de redevance et même redevance unitaire.
+  def cle_vente
+    [devise, droits, redevance_u]
   end
 end #/class KDPLine
 

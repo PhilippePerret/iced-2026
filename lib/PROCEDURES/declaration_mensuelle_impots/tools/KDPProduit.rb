@@ -33,6 +33,9 @@ class KDPProduit
   def prix_ht = data[:prix_ht]
   def name    = data[:name] || data[:titre]
 
+  # @return [Tarifs::Tarif] Le tarif en vigueur à la date +date+
+  def tarif_at(date = nil) = Tarifs.at(data, date)
+
 end #/ KDPProduit
 end #/UDecMois
 end #/Iced

@@ -10,3 +10,7 @@ gem "fileutils", "~> 1.8"
 gem "date", "~> 3.5"
 gem "csv", "~> 3.3"
 gem "ostruct", "~> 0.6.3"
+
+gem "minitest", "~> 6.1", group: :test
+
+gem "rake", "~> 13.4", group: :test
